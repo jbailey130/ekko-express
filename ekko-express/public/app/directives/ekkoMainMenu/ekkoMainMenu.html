@@ -1,0 +1,113 @@
+﻿<div class="col-md-12 hidden-xs" style="padding: 0; background-color: white; border-bottom: 1px solid lightgray" ng-show="user">
+    <div class="col-md-offset-2 col-md-8" style="padding: 0">
+        <ul style="display: inline-flex; font-family: 'Open Sans'; font-weight: 700; padding: 0;" class="col-xs-12 admin-nav">
+            <li ng-class="fieldClass" class="col-md-1">
+                <a ui-sref="field()"><i class="fa fa-home"></i> Field</a>
+            </li>
+            <li ng-class="newsClass" class="col-md-1">
+                <a ui-sref="fieldNews"><i class="fa fa-newspaper-o"></i> News</a>
+            </li>
+            <li ng-class="rivalsClass" class="col-md-1">
+                <a ui-sref="fieldRivals"><i class="fa fa-bomb"></i> Rivals</a>
+            </li>
+            <li ng-class="upsetsClass" class="col-md-1">
+                <a ui-sref="fieldUpsets"><i class="fa fa-exclamation"></i> Upsets</a>
+            </li>
+            <li ng-class="gamesClass" class="col-md-1">
+                <a ui-sref="fieldGames"><i class="fa fa-trophy"></i> Games</a>
+            </li>
+            <li ng-class="picksClass" class="col-md-1">
+                <a ui-sref="fieldPicks"><i class="fa fa-check"></i> Picks</a>
+            </li>
+            <!--<li ng-class="fantasyClass" class="col-md-1">
+                <a ui-sref="fieldFantasy"><i class="fa fa-star"></i> Fantasy</a>
+            </li>-->
+            <li class="col-md-2 no-hover">
+                <div>&nbsp;</div>
+            </li>
+            <li class="col-md-1 no-hover" style="padding: 10px 0;">
+                <div class="btn-group pull-right" role="group">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 0; background-color: white; padding: 0 10px 0 0; width: 50px;" class="pull-right">
+                        <i class="fa fa-caret-down" style="width: 10px; color: black; margin-top: 10px;"></i>
+                        <img ng-src="{{user.Avatar}}" alt="{{user.Location}}" class="pull-right" style="height: 30px; border-color: black"/>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="single-button" style="width: 100%">
+                        <li role="menuitem">
+                            <a ui-sref="teamSelect"><i class="fa fa-plus-square title-bar"></i><span class="pull-right">Select Teams</span></a>
+                        </li>
+                        <li role="menuitem">
+                            <a ui-sref="friends"><i class="fa fa-users title-bar"></i><span class="pull-right">Friends</span></a>
+                        </li>
+                        <li role="menuitem">
+                            <a href="#/notifications"><i class="fa fa-bolt title-bar"></i><span class="pull-right">Messages</span></a>
+                        </li>
+                        <li role="menuitem">
+                            <a ui-sref="profile"><i class="fa fa-cogs title-bar"></i><span class="pull-right">Profile</span></a>
+                        </li>
+                        <li role="menuitem">
+                            <a ui-sref="main" sp-logout><i class="fa fa-sign-out title-bar"></i><span class="pull-right">Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-2 text-center no-hover" style="margin-top: 10px;">
+                <div>
+                    <button type="button" class="btn btn-warning pull-right" style="font-family: 'Days One'; margin-top: 0; background-color: #E7BF3A" ng-click="toggleModal()">
+                        <i class="fa fa-pencil-square-o"></i> ekko
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+        <!--<ekko-modal title="Add an Ekko" visible="showModal">
+            <div class="col-xs-12">
+                <div class="col-xs-2 bg-white" style="padding: 5px; border-radius: 6px;border-bottom-color: #E7BF3A">
+                    <img ng-src="{{user.Avatar}}" alt="{{user.Location}}" class="pull-right" style="width: 100%;border-color: black" />
+                </div>
+                <div class="col-xs-10">
+                    <textarea style="border: 1px solid #E7BF3A"
+                              rows="4"
+                              ng-enter="create()"></textarea>
+                    <button type="button" class="btn btn-warning pull-right" style="font-family: 'Days One'; margin-top: 0; background-color: #E7BF3A; width: 170px;">
+                        <i class="fa fa-pencil-square-o"></i> ekko
+                    </button>
+                </div>
+            </div>
+        </ekko-modal>-->
+</div>
+
+<style>
+    .dropdown-menu li a i {
+        font-size: 18px;
+    }
+
+    .admin-nav li:hover {
+        background-color: #ebebeb;
+        color: #E7BF3A;
+        border-bottom: 5px solid #E7BF3A;
+    }
+
+    .no-hover:hover {
+        background-color: white !important;
+        color: white;
+        border-bottom: none !important;
+    }
+
+    .mini-nav {
+        padding: 10px 0;
+        font-size: 1.2em;
+        color: #2c2f36;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .admin-nav li.active {
+        color: #E7BF3A !important;
+        border-bottom: 5px solid #E7BF3A !important;
+    }
+
+    .dropdown-menu li:hover {
+        border-bottom: none;
+    }
+</style>

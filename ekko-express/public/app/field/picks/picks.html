@@ -1,0 +1,67 @@
+﻿<section>
+    <ekko-main-menu activelink="picks"></ekko-main-menu>
+</section>
+
+<section class="bg-05 section-container no-padding" ng-cloak>
+    <ekko-ads></ekko-ads>
+
+    <ekko-user-sidebar></ekko-user-sidebar>
+
+    <div class="col-xs-12 col-sm-4" style="padding: 0 10px;">
+
+        <div class="col-xs-6">
+            <div class="col-sm-12 bg-white schedule-sidebar-container" style="padding: 10px;">
+                <div style="border: 1px solid lightgray; border-radius: 6px; font-family: 'Open Sans Condensed'; font-size: 3em; padding: 10px; float: left">
+                    54%
+                </div>
+                <div style="font-family: 'Open Sans Condensed'; font-size: 1.1em; float: left; padding: 0 0 0 15px;">
+                    <p><b>Total Picks:</b> 111
+                    </p>
+                    <p><b>Total Wins:</b> 60
+                    </p>
+                    <p><b>Total Losses:</b> 41
+                    </p>
+                    <p><b>Total Pushes:</b> 10
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div ng-repeat="event in schedule" ng-show="schedule.length > 0" class="col-xs-12 bg-white" style="border-top: 5px solid #E7BF3A;border-bottom: 5px solid gray;">
+                <div class="col-xs-8" style="padding: 0">
+                    <a>
+                        <div class="col-xs-12" style="padding: 0">
+                            <div class="col-xs-12 pull-left" style="padding: 0">
+                                <input type="checkbox" style="width: 15px;"/>
+                                <!--<img ng-src="{{event.awayteamimage | lowercase}}" alt="{{event.awayteamlocation}} {{event.awayteamnickname}}" style="height: 30px; margin: 0; display: inline-flex"/>-->
+                                <img src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/panthers-logo.png" alt="Carolina Panthers" style="height: 30px; margin: 0; display: inline-flex" />
+
+                                <!--<span style="padding: 0px 0 0 5px; display: inline-flex; font-family: 'Open Sans Condensed'; font-size: 18px;">{{event.awayteamabbreviation | uppercase}}</span>-->
+                                <span style="padding: 0px 0 0 5px; display: inline-flex; font-family: 'Open Sans Condensed'; font-size: 18px;">CAR</span>
+                            </div>
+                        </div>
+                        <div style="position: absolute; top: 20px; left: 90px; background: white; padding: 0 5px; font-size: 18px; font-family: 'Open Sans Condensed'; width: 100%;">
+                            <!--{{event.startdatefull | date: 'EEE'}} {{event.startdatefull | date: 'h:mm a'}}-->
+                            Sun 6:30 PM
+                        </div>
+                        <div class="col-xs-12" style="padding-top: 0; padding-bottom: 5px; padding-left: 0px; padding-right: 0px;">
+                            <div class="col-xs-12 pull-left" style="padding: 0">
+                                <input type="checkbox" style="width: 15px;"/>
+                                <!--<img ng-src="{{event.hometeamimage | lowercase}}" style="height: 30px; margin: 0; display: inline-flex" alt="{{event.hometeamlocation}} {{event.hometeamnickname}}"/>-->
+                                <img src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/broncos-logo.png" style="height: 30px; margin: 0; display: inline-flex" alt="Denver Broncos" />
+                                <!--<span style="padding: 0px 0 0 5px; display: inline-flex; font-family: 'Open Sans Condensed'; font-size: 18px;">{{event.hometeamabbreviation | uppercase}}</span>-->
+                                <span style="padding: 0px 0 0 5px; display: inline-flex; font-family: 'Open Sans Condensed'; font-size: 18px;">DEN</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-4" style="padding: 0 5px 0 0; text-align: right; font-family: 'Open Sans'">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ekko-user-teams></ekko-user-teams>
+</section>

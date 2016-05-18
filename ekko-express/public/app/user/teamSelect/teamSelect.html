@@ -1,0 +1,126 @@
+﻿<section>
+    <ekko-main-menu activelink="field"></ekko-main-menu>
+</section>
+
+<section class="bg-02">
+    <ekko-ads></ekko-ads>
+
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 bg-dark-blue">
+
+        <div class="col-xs-12" style="margin-top: 20px; padding-bottom: 20px;">
+            <h1 style="color: #E7BF3A" class="pull-left">Select your teams</h1>
+            <div class="pull-right">
+                <a class="button green-bg" style="margin-top: 0px" ng-click="saveTeamSelections()">Select Teams</a> &nbsp;&nbsp;&nbsp;
+                <a href="#/field" class="button red-bg" style="margin-top: 0px">Skip</a>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div ng-repeat="team in selectedTeams" class="col-xs-2 team-box-small">
+                {{team.teamLoc}} {{team.teamName}}
+                <i class="fa fa-times pull-right" style="cursor: pointer" ng-click="removeSelection(team.teamId)"></i>
+            </div>
+        </div>
+
+        <div class="module-content tab-dark-blue">
+            <div class="m-01">
+                <ul class="vertical tab-nav click-tab">
+                    <li><h4>NFL</h4></li>
+                    <li><h4>MLB</h4></li>
+                    <li><h4>NBA</h4></li>
+                    <li><h4>NHL</h4></li>
+                    <li><h4>FBS</h4></li>
+                    <li><h4>NCAAM</h4></li>
+                </ul>
+            </div>
+            <div class="col-xs-11">
+                <div class="tab-content ">
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in nfl | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('nfl', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{team.team.nickname | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in mlb | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('mlb', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/mlb/{{team.team.nickname | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in nba | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('nba', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nba/{{team.team.nickname | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in nhl | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('nhl', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nhl/{{team.team.nickname | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in fbs | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('fbs', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/college/{{team.team.location | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <span ng-repeat="team in ncaam | orderBy: 'team.location'" class="col-xs-5 col-sm-2 team-box" ng-click="selectTeam('ncaam', team.team.teamId, team.team.location, team.team.nickname)">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/college/{{team.team.location | lowercase}}-logo.png" alt="{{team.team.location}} {{team.team.nickname}}" />
+                            <p style="padding: 5px">{{team.team.location}} {{team.team.nickname}}</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function($) {
+        //Vertical Click Tab
+        $('.tab-content div').hide();
+        $('.tab-content div:first-child').show();
+        $('.tab-nav li:first-child').addClass('active');
+
+        $('.click-tab').each(function() {
+            $(this).find('li').on('click', function() {
+                var index = $(this).parent().children().index($(this));
+                $(this).addClass('active').siblings('.active').removeClass('active');
+                $(this).closest('.module-content').find('.tab-content div').eq(index).show().siblings().hide();
+            });
+        });
+    });
+</script>
+
+<style type="text/css">
+    .team-box {
+        height: 150px;
+        border: 1px solid white;
+        border-radius: 8px;
+        margin: 10px;
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+        .team-box img {
+            max-height: 120px;
+            max-width: 120px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    .team-box-small {
+        height: 50px;
+        border: 1px solid white;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        text-align: left;
+        font-size: 16px;
+        color: white;
+    }
+</style>

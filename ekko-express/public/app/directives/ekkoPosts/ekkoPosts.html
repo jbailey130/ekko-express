@@ -1,0 +1,121 @@
+﻿<div class="col-xs-12 col-md-4 mb-50">
+    <div class="col-xs-12 bground-yellow" style="padding: 20px 0;">
+        <textarea msd-elastic
+                  data-ng-model="content"
+                  rows="1"
+                  ng-enter="create()"
+                  placeholder="leave a comment"></textarea>
+    </div>
+
+    <div class="col-xs-12 no-padding standard-border mt-10" ng-repeat="post in posts" ng-init="post.isEditing = false; post.isReplying = false">
+        <!--
+        POST USER DISPLAY
+        -->
+        <div class="col-xs-12 bground-white pt-10 height-full">
+            <div class="col-xs-2 height-full no-padding bground-white">
+                <img ng-src="{{post.avatar}}" alt="" class="img-responsive pull-left" style="height: 35px; width: auto;">
+            </div>
+            <div class="col-xs-10 bground-white no-padding">
+                <b class="pull-left" style="font-size: 22px;"><a href="/field/{{post.name}}">{{post.name}}</a></b>
+            </div>
+        </div>
+
+        <!--
+        POST DISPLAY
+        -->
+        <div class="col-xs-12 bground-white" style="padding: 0 0 10px 0">
+            <div class="col-xs-11 col-sm-push-1">
+                <span class="color-dark-gray" style="padding: 10px 0;">{{post.post_text}}</span>
+            </div>
+        </div>
+
+        <!--
+        THUMBS UP / THUMBS DOWN - EDIT SAVE AND CANCEL - COMMENT TOGGLE
+        -->
+        <div class="info pull-left bground-white no-margin" style="font-size: 13px; width: 100%; ">
+            <ul>
+                <li class="date"><i class="fa fa-calendar"></i>{{post.last_updated | dateDiff:now }}</li>
+                <li class="comments">
+                    <a ng-click="getReplies(post)" class="pointer">
+                        <i class="fa fa-commenting"></i>{{post.post_reply_count}}
+                    </a>
+                </li>
+                <li class="comments">
+                    <a ng-click="thumbs(post, 'up')" ng-show="post.action_type != 'ThumbsUp'" class="pointer">
+                        <i class="fa fa-thumbs-o-up"></i>{{post.thumbs_up}}
+                    </a>
+                    <span ng-show="post.ActionType == 'ThumbsUp'">
+                        <i class="fa fa-thumbs-up"></i>{{post.thumbs_up}}
+                    </span>
+                </li>
+                <li class="comments">
+                    <a ng-click="thumbs(post, 'down')" ng-show="post.action_type != 'ThumbsDown'" class="pointer">
+                        <i class="fa fa-thumbs-o-down"></i>{{post.thumbs_down}}
+                    </a>
+                    <span ng-show="post.ActionType == 'ThumbsDown'">
+                        <i class="fa fa-thumbs-down"></i>{{post.thumbs_down}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-11 col-md-offset-1 no-padding pt-10 bground-white bground-light-gray" ng-show="post.ShowComments">
+
+            <div ng-repeat="reply in post.Replies | orderBy: 'LastUpdated'" ng-init="reply.isEditing = false; reply.isReplying = false" class="col-sm-12 no-padding">
+                <div class="m-12 bground-light-gray pt-5">
+                    <div class="col-xs-1 no-padding">
+                        <img ng-src="{{reply.avatar}}" alt="" class="img-responsive" style="margin-left: 15px;height: 35px; width: auto;">
+                    </div>
+                    <div class="col-xs-11 no-padding">
+                        <b class="pull-left" style="padding-left: 15px; font-size: 22px;"><a href="/field/{{reply.name}}">{{reply.name}}</a></b>
+                        <!--<a ng-click="edit(reply)" class="pull-right" style="cursor: pointer" ng-show="reply.AccountProfileName === rootUsername && isFieldOwner"><i class="fa fa-edit" style="font-size: 22px"></i></a>
+                        <a ng-click="deletePost(reply)" class="pull-right" style="cursor: pointer" ng-show="reply.AccountProfileName === rootUsername && isFieldOwner"><i class="fa fa-eraser" style="font-size: 22px"></i></a>-->
+                    </div>
+                </div>
+                <div class="col-xs-offset-1 col-xs-11 bground-light-gray" style="padding: 10px;">
+                    <span ng-show="reply.isEditing === false" class="color-dark-gray">{{reply.post_text}}</span>
+                    <textarea msd-elastic cols="83" rows="1" data-ng-model="reply.PostText" ng-show="reply.isEditing === true" ng-enter="updatePost(reply)"></textarea>
+                </div>
+                <div class="info pull-right m-12 no-margin" style="font-size: 13px; width: 100%;">
+                    <ul>
+                        <li class="date"><i class="fa fa-calendar"></i>{{reply.last_updated | dateDiff:now}}</li>
+                        <li class="comments">
+                            <a ng-click="thumbs(reply, 'up')" ng-show="reply.ActionType != 'ThumbsUp'" style="cursor: pointer">
+                                <i class="fa fa-thumbs-o-up"></i>{{reply.thumbs_up}}
+                            </a>
+                            <span ng-show="reply.ActionType == 'ThumbsUp'">
+                                <i class="fa fa-thumbs-up"></i>{{reply.thumbs_up}}
+                            </span>
+                        </li>
+                        <li class="comments">
+                            <a ng-click="thumbs(reply, 'down')" ng-show="reply.ActionType != 'ThumbsDown'" style="cursor: pointer">
+                                <i class="fa fa-thumbs-o-down"></i>{{reply.thumbs_down}}
+                            </a>
+                            <span ng-show="reply.ActionType == 'ThumbsDown'">
+                                <i class="fa fa-thumbs-down"></i>{{reply.thumbs_down}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-12 bground-yellow" style="padding: 15px 0px;padding: 20px 0;" ng-show="post.ShowComments">
+                <textarea msd-elastic ng-model="post.reply" rows="1" ng-enter="saveReply(post)" ng-show="post.ShowComments" placeholder="leave a reply"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    textarea {
+        width: 100%;
+        resize: none;
+        padding: 10px 10px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        text-align: left;
+        color: black;
+        border: red 1px;
+    }
+</style>

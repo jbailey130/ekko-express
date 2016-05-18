@@ -1,0 +1,609 @@
+﻿<section>
+    <ekko-main-menu activelink="field"></ekko-main-menu>
+</section>
+
+<section>
+    <ekko-team-header activesport="nfl"></ekko-team-header>
+</section>
+
+<section class="bg-02" style="padding: 0">
+    <ekko-ads></ekko-ads>
+
+    <!-- EVENT HEADER -->
+    <div class="col-xs-8 col-xs-offset-2 bg-dark-blue" style="color: white; padding: 0; margin-top: 10px; border-top: 8px solid #E7BF3A; border-bottom: 5px solid gray;">
+        <div class="col-xs-5" style="font-family: 'Open Sans Condensed'; text-align: right; font-size: 30px" ng-style="{ 'height': '150px', 'overflow': 'hidden', 'background-image': 'url(https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/' + event.teams[1].nickname.toLowerCase() + '-logo.png)', 'background-repeat': 'no-repeat', 'background-position': 'left center', 'background-size': '250px 250px'}">
+            <div class="col-xs-10" style="color: gray">
+                {{event.teams[1].location}} <b>{{event.teams[1].nickname}}</b>
+                <p style="font-size: 20px; color: gray">{{event.teams[1].record.wins}} - {{event.teams[1].record.losses}}</p>
+            </div>
+            <div class="col-xs-2" style="font-family: 'Open Sans'; font-size: 60px; color: gray;">
+                {{event.teams[1].score}}
+            </div>
+        </div>
+        <div class="col-xs-2" style="text-align: center; font-family: 'Open Sans'; padding: 15px 0 5px 0; font-size: 14px">
+            {{event.startDate[0].full | date: 'EEE'}}. {{event.startDate[0].month}}/{{event.startDate[0].date}}
+            <p style="font-family: 'Open Sans'; font-size: 16px;">{{event.startDate[0].full | date: 'h:mm a'}}</p>
+            <div class="col-xs-12" style="padding-top: 3%; padding-bottom: 0; padding-left: 0px; padding-right: 0px; border-bottom: 1px solid gray">
+                <div class="col-xs-3 pull-left" style="padding: 0">
+                    <p style="font-family: 'Open Sans'; font-size: 16px;text-align: left">FINAL</p>
+                </div>
+                <div class="col-xs-9" style="margin-top: 3px; font-size: 16px; padding-right: 0; text-align: right; font-family: 'Open Sans';">
+                    <div class="pull-right" style="width: 15%; text-align: right; font-size: 16px;">
+                        <b>T</b>
+                    </div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">4</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">3</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">2</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">1</div>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding: 0">
+                <div class="col-xs-3 pull-left" style="padding: 0">
+                    <p style="font-family: 'Open Sans'; font-size: 16px;text-align: left">{{event.teams[1].abbreviation.toUpperCase()}}</p>
+                </div>
+                <div class="col-xs-9" style="margin-top: 3px; font-size: 16px; padding-right: 0; text-align: right; font-family: 'Open Sans';">
+                    <div class="pull-right" style="width: 15%; text-align: right; font-size: 16px;">
+                        <b>{{event.teams[1].score}}</b>
+                    </div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[1].linescores[3].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[1].linescores[2].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[1].linescores[1].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[1].linescores[0].score}}</div>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding: 0">
+                <div class="col-xs-3 pull-left" style="padding: 0">
+                    <p style="font-family: 'Open Sans'; font-size: 16px;text-align: left">{{event.teams[0].abbreviation.toUpperCase()}}</p>
+                </div>
+                <div class="col-xs-9" style="margin-top: 3px; font-size: 16px; padding-right: 0; text-align: right; font-family: 'Open Sans';">
+                    <div class="pull-right" style="width: 15%; text-align: right; font-size: 16px;">
+                        <b>{{event.teams[0].score}}</b>
+                    </div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[0].linescores[3].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[0].linescores[2].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[0].linescores[1].score}}</div>
+                    <div class="pull-right" style="width: 15%; text-align: center; font-size: 16px;">{{event.teams[0].linescores[0].score}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5" style="font-family: 'Open Sans Condensed'; text-align: left; font-size: 30px" ng-style="{ 'height': '150px', 'overflow': 'hidden', 'background-image': 'url(https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/' + event.teams[0].nickname.toLowerCase() + '-logo.png)', 'background-repeat': 'no-repeat', 'background-position': 'right center', 'background-size': '250px 250px'}">
+            <div class="col-xs-2" style="font-family: 'Open Sans'; font-size: 60px;">
+                {{event.teams[0].score}}
+            </div>
+            <div class="col-xs-10">
+                {{event.teams[0].location}} <b>{{event.teams[0].nickname}}</b>
+                <p style="font-size: 20px;">{{event.teams[0].record.wins}} - {{event.teams[0].record.losses}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" style="padding: 0; padding-top: 10px; padding-bottom: 10px;">
+
+        <div class="col-xs-6 col-xs-offset-2" style="border-top: 8px solid #E7BF3A; border-bottom: 5px solid gray; background-color: #f5f5f5">
+            <!-- MENU -->
+            <div class="col-xs-12" style="padding: 10px 0; font-family: 'Open Sans'; font-weight: 600; font-size: 16px; text-align: center; background-color: white; margin-top: 10px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                <a ng-click="swap('game')" class="pointer">game summary</a> | <a ng-click="swap('box')" class="pointer">full box score</a> | <a ng-click="swap('pbp')" class="pointer">drives & play-by-play</a> | <a ng-click="swap('stat')" class="pointer">full team stats</a>
+            </div>
+
+            <!-- GAME SUMMARY -->
+            <div class="col-xs-12" style="padding: 0" ng-show="showSummary">
+                <!-- LEADERS/GAME STATS -->
+                <div class="col-xs-4" style="padding: 0;">
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <div class="col-xs-12">
+                            <p style="font-weight: 600; font-size: 16px;">Leaders</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">PASSING</p>
+                            <div class="col-xs-6" style="padding: 0; text-align: right; padding-right: 5px;">
+                                <p style="font-weight: bold; font-size: 14px;">{{event.boxscores[1].playerStats.passingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[1].playerStats.passingStats[0].completions}}/{{event.boxscores[1].playerStats.passingStats[0].attempts}}, {{event.boxscores[1].playerStats.passingStats[0].yards}} YDS</p>
+                            </div>
+                            <div class="col-xs-6" style="padding: 0; padding-left: 5px; border-left: 1px solid gray">
+                                <p style="font-weight: bold">{{event.boxscores[0].playerStats.passingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[0].playerStats.passingStats[0].completions}}/{{event.boxscores[0].playerStats.passingStats[0].attempts}}, {{event.boxscores[0].playerStats.passingStats[0].yards}} YDS</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12" style="padding: 0; padding-top: 10px;">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">RUSHING</p>
+                            <div class="col-xs-6" style="padding: 0; text-align: right; padding-right: 5px;">
+                                <p style="font-weight: bold; width: 100%">{{event.boxscores[1].playerStats.rushingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[1].playerStats.rushingStats[0].attempts}} CAR, {{event.boxscores[1].playerStats.rushingStats[0].yards}} YDS</p>
+                            </div>
+                            <div class="col-xs-6" style="padding: 0; padding-left: 5px; border-left: 1px solid gray">
+                                <p style="font-weight: bold">{{event.boxscores[0].playerStats.rushingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[0].playerStats.rushingStats[0].attempts}} CAR, {{event.boxscores[0].playerStats.rushingStats[0].yards}} YDS</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12" style="padding: 0; padding-top: 10px; padding-bottom: 10px;">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">RECEIVING</p>
+                            <div class="col-xs-6" style="padding: 0; text-align: right; padding-right: 5px;">
+                                <p style="font-weight: bold; width: 100%">{{event.boxscores[1].playerStats.receivingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[1].playerStats.receivingStats[0].receptions}} REC, {{event.boxscores[1].playerStats.receivingStats[0].yards}} YDS</p>
+                            </div>
+                            <div class="col-xs-6" style="padding: 0; padding-left: 5px; border-left: 1px solid gray">
+                                <p style="font-weight: bold">{{event.boxscores[0].playerStats.receivingStats[0].player.lastName}}</p>
+                                <p>{{event.boxscores[0].playerStats.receivingStats[0].receptions}} REC, {{event.boxscores[0].playerStats.receivingStats[0].yards}} YDS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <div class="col-xs-12">
+                            <p style="font-weight: 600; font-size: 16px;">Game Stats</p>
+                        </div>
+                        <div class="col-xs-12" style="padding: 5px 0 0 0;">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">TOTAL YARDS</p>
+                            <div class="col-xs-12" style="padding: 0; text-align: center;">
+                                <p style="margin: auto; display: inline-flex;align-items: center">
+                                    {{event.boxscores[1].teamStats.gameTotals.netYards}} YDS &nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" /> &nbsp;
+                                    {{event.boxscores[0].teamStats.gameTotals.netYards}} YDS
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="padding: 10px 0 0 0;">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">FIRST DOWNS</p>
+                            <div class="col-xs-12" style="padding: 0; text-align: center;">
+                                <p style="margin: auto; display: inline-flex;align-items: center">
+                                    {{event.boxscores[1].teamStats.firstDowns.total}} &nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" /> &nbsp;
+                                    {{event.boxscores[0].teamStats.firstDowns.total}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="padding: 10px 0 0 0;">
+                            <p style="font-family: 'Open Sans'; font-size: 12px; text-align: center">TIME OF POSSESSION</p>
+                            <div class="col-xs-12" style="padding: 0; text-align: center;">
+                                <p style="margin: auto; display: inline-flex;align-items: center">
+                                    {{event.boxscores[1].teamStats.timeOfPossession.minutes}}:{{event.boxscores[1].teamStats.timeOfPossession.seconds}} &nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" /> &nbsp;
+                                    {{event.boxscores[0].teamStats.timeOfPossession.minutes}}:{{event.boxscores[0].teamStats.timeOfPossession.seconds}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="padding: 10px 0 10px 0;">
+                            <p style="font-family: 'Open Sans'; font-size: 14px; text-align: center">Third Down %</p>
+                            <div class="col-xs-12" style="padding: 0; text-align: center;">
+                                <p style="margin: auto; display: inline-flex;align-items: center">
+                                    {{event.boxscores[1].teamStats.thirdDownEfficiency.percentage}}% &nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" /> &nbsp;
+                                    {{event.boxscores[0].teamStats.thirdDownEfficiency.percentage}}%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HIGHLIGHTS/RECAP -->
+                <div class="col-xs-8" style="padding-right: 0">
+                    <div class="col-xs-12" style="padding: 15px 10px 0 10px; border-radius: 6px; border: 1px solid #D0D0D0; margin-top: 5px; background-color: white">
+                        <div ng-click="showArticle()" class="col-xs-12" style="padding: 0 5px 10px 5px">
+                            <h3 class="pull-left" style="padding: 0 0 10px 0">{{recap.apiResults[0].league.story.header.headline}}</h3>
+                            <p style="font-size: 14px; color: gray">{{recap.apiResults[0].league.story.publishDate.full | date : 'MMMM d, yyyy h:mm a'}}</p>
+                            <p style="font-size: 12px; color: gray; font-style: italic">{{recap.apiResults[0].league.story.header.byline}}</p>
+                            <hr style="color: #f5f5f5" />
+                            <p ng-repeat="paragraph in recap.apiResults[0].league.story.content.paragraphs track by $index" style="color: #3f444a; padding: 5px;">
+                                {{paragraph}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FULL BOX SCORE -->
+            <div class="col-xs-12" style="padding: 0" ng-show="showFullBoxScore">
+                <div class="col-xs-6">
+                    <!-- RUSHING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp; {{event.teams[1].location}} {{event.teams[1].nickname}} Rushing
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="name"></th>
+                                <th class="car" style="text-align: right">CAR</th>
+                                <th class="yds" style="text-align: right">YDS</th>
+                                <th class="avg" style="text-align: right">AVG</th>
+                                <th class="td" style="text-align: right">TD</th>
+                                <th class="long" style="text-align: right">LONG</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="" ng-repeat="stat in event.boxscores[1].playerStats.rushingStats">
+                                <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                <td class="car" style="text-align: right">{{stat.attempts}}</td>
+                                <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                <td class="avg" style="text-align: right">{{stat.yardsPerAttempt}}</td>
+                                <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                <td class="long" style="text-align: right">{{stat.long}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- PASSING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp; {{event.teams[1].location}} {{event.teams[1].nickname}} Passing
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="name"></th>
+                                <th class="car" style="text-align: right">C/ATT</th>
+                                <th class="yds" style="text-align: right">YDS</th>
+                                <th class="avg" style="text-align: right">AVG</th>
+                                <th class="td" style="text-align: right">TD</th>
+                                <th class="long" style="text-align: right">INT</th>
+                                <th class="long" style="text-align: right">SACKS</th>
+                                <th class="long" style="text-align: right">QBR</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="" ng-repeat="stat in event.boxscores[1].playerStats.passingStats">
+                                <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                <td class="car" style="text-align: right">{{stat.completions}}/{{stat.attempts}}</td>
+                                <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                <td class="avg" style="text-align: right">{{stat.yardsPerAttempt}}</td>
+                                <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                <td class="long" style="text-align: right">{{stat.interceptions}}</td>
+                                <td class="long" style="text-align: right">{{stat.sacked}}</td>
+                                <td class="long" style="text-align: right">{{stat.rating}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- RECEIVING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp; {{event.teams[1].location}} {{event.teams[1].nickname}} Receiving
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="name"></th>
+                                    <th class="car" style="text-align: right">REC</th>
+                                    <th class="yds" style="text-align: right">YDS</th>
+                                    <th class="td" style="text-align: right">TD</th>
+                                    <th class="long" style="text-align: right">LONG</th>
+                                    <th class="long" style="text-align: right">TGTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="stat in event.boxscores[1].playerStats.receivingStats">
+                                    <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                    <td class="car" style="text-align: right">{{stat.receptions}}</td>
+                                    <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                    <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                    <td class="long" style="text-align: right">{{stat.long}}</td>
+                                    <td class="long" style="text-align: right">{{stat.targets}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <!-- RUSHING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp;{{event.teams[0].location}} {{event.teams[0].nickname}} Rushing
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="name"></th>
+                                <th class="car" style="text-align: right">CAR</th>
+                                <th class="yds" style="text-align: right">YDS</th>
+                                <th class="avg" style="text-align: right">AVG</th>
+                                <th class="td" style="text-align: right">TD</th>
+                                <th class="long" style="text-align: right">LONG</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="stat in event.boxscores[0].playerStats.rushingStats">
+                                <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                <td class="car" style="text-align: right">{{stat.attempts}}</td>
+                                <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                <td class="avg" style="text-align: right">{{stat.yardsPerAttempt}}</td>
+                                <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                <td class="long" style="text-align: right">{{stat.long}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- PASSING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp; {{event.teams[0].location}} {{event.teams[0].nickname}} Passing
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="name"></th>
+                                <th class="car" style="text-align: right">C/ATT</th>
+                                <th class="yds" style="text-align: right">YDS</th>
+                                <th class="avg" style="text-align: right">AVG</th>
+                                <th class="td" style="text-align: right">TD</th>
+                                <th class="long" style="text-align: right">INT</th>
+                                <th class="long" style="text-align: right">SACKS</th>
+                                <th class="long" style="text-align: right">QBR</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="" ng-repeat="stat in event.boxscores[0].playerStats.passingStats">
+                                <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                <td class="car" style="text-align: right">{{stat.completions}}/{{stat.attempts}}</td>
+                                <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                <td class="avg" style="text-align: right">{{stat.yardsPerAttempt}}</td>
+                                <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                <td class="long" style="text-align: right">{{stat.interceptions}}</td>
+                                <td class="long" style="text-align: right">{{stat.sacked}}</td>
+                                <td class="long" style="text-align: right">{{stat.rating}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- RECEIVING -->
+                    <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                        <span colspan="100" style="margin: auto; display: inline-flex; align-items: center; font-weight: bold">
+                            <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25" />&nbsp;&nbsp; {{event.teams[0].location}} {{event.teams[0].nickname}} Receiving
+                        </span>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="name"></th>
+                                    <th class="car" style="text-align: right">REC</th>
+                                    <th class="yds" style="text-align: right">YDS</th>
+                                    <th class="td" style="text-align: right">TD</th>
+                                    <th class="long" style="text-align: right">LONG</th>
+                                    <th class="long" style="text-align: right">TGTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" ng-repeat="stat in event.boxscores[0].playerStats.receivingStats">
+                                    <td class="">{{stat.player.firstName}} {{stat.player.lastName}}</td>
+                                    <td class="car" style="text-align: right">{{stat.receptions}}</td>
+                                    <td class="yds" style="text-align: right">{{stat.yards}}</td>
+                                    <td class="td" style="text-align: right">{{stat.touchdowns}}</td>
+                                    <td class="long" style="text-align: right">{{stat.long}}</td>
+                                    <td class="long" style="text-align: right">{{stat.targets}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DRIVES/PBP -->
+            <div class="col-xs-12" style="padding: 0" ng-show="showDrivePbp">
+                <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="padding: 15px 0 0 0;">
+                        <div class="panel panel-default" ng-repeat="drive in event.driveChart">
+                            <div class="panel-heading" role="tab" id="header_{{drive.driveId}}">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{drive.driveId}}" aria-expanded="{{drive.driveId == 1}}" aria-controls="collapse_{{drive.driveId}}" style="display: inline-flex">
+                                        <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase()}}-logo.png" height="25" ng-show="drive.teamId == 350"/>
+                                        <img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase()}}-logo.png" height="25" ng-show="drive.teamId != 350"/>
+                                        <span style="margin-top: 5px; padding-left: 10px;">
+                                            {{drive.driveEnd.driveChartPlayName}}
+                                        </span>
+                                        <span style="font-style: italic; font-size: 14px; padding-left: 10px; margin-top: 7px;">
+                                            {{drive.driveStats.plays}} Plays, {{drive.driveStats.yards}} Yards, {{drive.driveStats.timeOfPossession.minutes}}:{{drive.driveStats.timeOfPossession.seconds < 10 ? '0' + drive.driveStats.timeOfPossession.seconds : drive.driveStats.timeOfPossession.seconds}}
+                                        </span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse_{{drive.driveId}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="header_{{drive.driveId}}" ng-class="drive.driveId !== 1 ? '' : 'in' ">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li ng-repeat="pbp in event.pbp | pbpByDrive : drive.driveId" style="font-size: 12px; padding: 5px 0; border-bottom: 1px solid #f5f5f5">
+                                            <p ng-show="pbp.down !== null" style="font-weight: bold">{{pbp.down}}{{pbp.down === '1' ? 'st' : pbp.down === '2' ? 'nd' : pbp.down === '3' ? 'rd' : pbp.down === '4' ? 'th' : ''}} and {{pbp.distance}} at {{pbp.yardLine}} </p>
+                                            <span style="font-style: italic">( {{pbp.time}} - {{pbp.period}}{{pbp.period === 1 ? 'st' : pbp.period === 2 ? 'nd' : pbp.period === 3 ? 'rd' : pbp.period === 4 ? 'th' : ''}} ) </span>
+                                            <span>{{pbp.playText}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FULL TEAM STATS -->
+            <div class="col-xs-12" style="padding: 0" ng-show="showFullTeamStats">
+                <div class="col-xs-12 bg-white" style="margin-top: 5px; font-family: 'Open Sans'; padding: 5px; border-radius: 6px; border: 1px solid #D0D0D0;">
+                    <!-- MATCHUPS -->
+                    <table class="table table-striped">
+                        <tr>
+                            <td colspan="3">
+                                <p style="font-weight: 600; font-size: 16px;">Game Stats</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%"></td>
+                            <td style="width: 15%; text-align: right">
+                                MIN
+                                <!--<img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[1].nickname.toLowerCase() }}-logo.png" height="25" width="25"/>-->
+                            </td>
+                            <td style="width: 15%; text-align: right">
+                                NO
+                                <!--<img ng-src="https://s3-us-west-2.amazonaws.com/ekkosports/logos/nfl/{{event.teams[0].nickname.toLowerCase() }}-logo.png" height="25" width="25"/>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                1st Downs
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.firstDowns.total}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.firstDowns.total}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passing 1st Downs
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.firstDowns.passing}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.firstDowns.passing}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rushing 1st Downs
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.firstDowns.penalty}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.firstDowns.penalty}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd Down Efficiancy
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.thirdDownEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.thirdDownEfficiency.attempts}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.thirdDownEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.thirdDownEfficiency.attempts}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th Down Efficiancy
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.fourthDownEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.fourthDownEfficiency.attempts}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.fourthDownEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.fourthDownEfficiency.attempts}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Total Plays
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.gameTotals.plays}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.gameTotals.plays}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Total Yards
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.gameTotals.netYards}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.gameTotals.netYards}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Yards per play
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.gameTotals.average}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.gameTotals.average}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Total Drives
+                            </td>
+                            <td style="width: 15%; text-align: right;">8</td>
+                            <td style="width: 15%; text-align: right;">8</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Passing
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.netYards}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.netYards}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comp - Att
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.completions}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.attempts}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.completions}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.attempts}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yards Per Pass
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.yardsPerAttempt}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.yardsPerAttempt}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interceptions
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.interceptions}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.interceptions}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sack - Yards Lost
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.sacked}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.passing.sackedYardsLost}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.sacked}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.passing.sackedYardsLost}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Rushing
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.rushing.yards}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.rushing.yards}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attempts
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.rushing.attempts}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.rushing.attempts}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yards per rush
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.rushing.average}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.rushing.average}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Red Zone (Made - Att)
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.redZoneEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.redZoneEfficiency.attempts}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.redZoneEfficiency.made}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.redZoneEfficiency.attempts}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Penalties
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.penalties.number}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.penalties.yards}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.penalties.number}} - {{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.penalties.yards}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Turnovers
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.interceptions.number + game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.ownFumbles.lost}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.interceptions.number + game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.ownFumbles.lost}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Fumbles Lost
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.ownFumbles.lost}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.ownFumbles.lost}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Interceptions Thrown
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.interceptions.number}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.interceptions.number}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 70%">
+                                Possession
+                            </td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.timeOfPossession.minutes}}:{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[1].teamStats.timeOfPossession.seconds}}</td>
+                            <td style="width: 15%; text-align: right;">{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.timeOfPossession.minutes}}:{{game.apiResults[0].league.season.eventType[0].events[0].boxscores[0].teamStats.timeOfPossession.seconds}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <ekko-user-teams></ekko-user-teams>
+
+    </div>
+</section>

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html ng-app="ekkoApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EKKO SPORTS</title>
+
+    <base href="/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,700italic,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://code.angularjs.org/1.4.8/angular.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-resource.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-cookies.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-sanitize.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-animate.js" type="text/javascript"></script>
+
+    <link href="javascripts/slidebar/slidebars.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="javascripts/slidebar/slidebars.js"></script>
+
+    <script src="javascripts/angular-ui-router.js"></script>
+    <script src="javascripts/lodash.js"></script>
+
+    <script src="javascripts/stormpath-sdk-angular.js"></script>
+    <script src="javascripts/stormpath-sdk-angularjs.tpls.js"></script>
+
+    <script src="javascripts/bootstrap.ui.js" type="text/javascript"></script>
+    <script src="javascripts/ng-elastic.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="app/app.js"></script>
+
+    <script type="text/javascript" src="app/filters/common.filters.js"></script>
+    <script type="text/javascript" src="app/services/field.service.js"></script>
+    <script type="text/javascript" src="app/services/team.service.js"></script>
+
+    <script type="text/javascript" src="app/directives/ekkoAds/ekkoAds.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoEnter/ekkoEnter.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoPosts/ekkoPosts.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoUserSidebar/ekkoUserSidebar.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoUserTeams/ekkoUserTeams.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoMainMenu/ekkoMainMenu.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoSidebarSchedule/ekkoSidebarSchedule.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoTeamHeader/ekkoTeamHeader.directive.js"></script>
+    <script type="text/javascript" src="app/directives/ekkoNewsFeed/ekkoNewsFeed.directive.js"></script>
+
+    <!-- HOME -->
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main.js"></script>
+
+    <!-- FIELD -->
+    <script src="app/field/field.controller.js"></script>
+    <script src="app/field/field.js"></script>
+    <script src="app/field/fantasy/fantasy.controller.js"></script>
+    <script src="app/field/fantasy/fantasy.js"></script>
+    <script src="app/field/games/games.controller.js"></script>
+    <script src="app/field/games/games.js"></script>
+    <script src="app/field/news/news.controller.js"></script>
+    <script src="app/field/news/news.js"></script>
+    <script src="app/field/picks/picks.controller.js"></script>
+    <script src="app/field/picks/picks.js"></script>
+    <script src="app/field/rivals/rivals.controller.js"></script>
+    <script src="app/field/rivals/rivals.js"></script>
+    <script src="app/field/upsets/upsets.controller.js"></script>
+    <script src="app/field/upsets/upsets.js"></script>
+
+    <!-- SPORTS -->
+    <script src="app/sports/fbs/fbs.controller.js"></script>
+    <script src="app/sports/fbs/fbs.js"></script>
+    <script src="app/sports/mlb/mlb.controller.js"></script>
+    <script src="app/sports/mlb/mlb.js"></script>
+    <script src="app/sports/nba/nba.controller.js"></script>
+    <script src="app/sports/nba/nba.js"></script>
+    <script src="app/sports/ncaam/ncaam.controller.js"></script>
+    <script src="app/sports/ncaam/ncaam.js"></script>
+    <script src="app/sports/nfl/nfl.controller.js"></script>
+    <script src="app/sports/nfl/nfl.js"></script>
+    <script src="app/sports/nhl/nhl.controller.js"></script>
+    <script src="app/sports/nhl/nhl.js"></script>
+
+    <!-- EVENTS -->
+    <script src="app/sports/nfl/event/event.controller.js"></script>
+    <script src="app/sports/nfl/event/event.js"></script>
+
+    <!-- AUTHENTICATION -->
+    <script src="app/auth/forgot/forgot.controller.js"></script>
+    <script src="app/auth/forgot/forgot.js"></script>
+    <script src="app/auth/login/login.controller.js"></script>
+    <script src="app/auth/login/login.js"></script>
+    <script src="app/auth/register/register.controller.js"></script>
+    <script src="app/auth/register/register.js"></script>
+    <script src="app/auth/reset/reset.controller.js"></script>
+    <script src="app/auth/reset/reset.js"></script>
+    <script src="app/auth/verify/verify.controller.js"></script>
+    <script src="app/auth/verify/verify.js"></script>
+
+    <!-- USER -->
+    <script src="app/user/profile/profile.controller.js"></script>
+    <script src="app/user/profile/profile.js"></script>
+    <script src="app/user/teamSelect/teamSelect.controller.js"></script>
+    <script src="app/user/teamSelect/teamSelect.js"></script>
+    <script src="app/user/friends/friends.controller.js"></script>
+    <script src="app/user/friends/friends.js"></script>
+
+</head>
+<body>
+    <div id="sb-site">
+        <section class="sport-news">
+            <div class="col-xs-3 col-sm-3 hidden-md hidden-lg pt-5">
+                <a class="sb-toggle-left hamburger-icon"><i class="fa fa-bars"></i></a>    
+            </div>
+
+            <div class="hidden-xs hidden-sm col-md-offset-2 col-md-8">
+                <div class="col-sm-5">
+                    <nav>
+                        <div class="logo" style="">
+                            <a ui-sref="main" class="days-one font-2em no-text-deco" style="">
+                                ekko <span class="color-yellow">sports</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="field" class="open-sans weight-600 font-1em">HOME</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="nfl( { teamid : null } )" class="open-sans weight-600 font-1em">NFL</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="mlb" class="open-sans weight-600 font-1em">MLB</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="nba" class="open-sans weight-600 font-1em">NBA</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="nhl" class="open-sans weight-600 font-1em">NHL</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="fbs" class="open-sans weight-600 font-1em">FBS</a>
+                    </div>
+                </div>
+                <div class="m-01 sport">
+                    <div class="sport-content">
+                        <a ui-sref="ncaam" class="open-sans weight-600 font-1em">NCAAM</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="days-one text-align-center color-white font-2em weight-normal height-50 pull-right hidden-md hidden-lg" style="border-bottom: 5px solid #E7BF3A; padding-right: 10px; ">ekko <span class="color-yellow">sports</span> </div>
+        </section>
+
+        <section class="bground-white height-full">
+            <div ui-view=""></div>
+        </section>
+    </div>
+
+    <div class="sb-slidebar sb-left ">
+        <div class="days-one text-align-center color-white font-2em weight-normal" style="height: 50px; border-bottom: 5px solid #E7BF3A; ">ekko <span class="color-yellow">sports</span> </div>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ui-sref="field">
+                            Home
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Sports
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <a ui-sref="nfl( { teamid : null } )" class="open-sans weight-600 color-dark-gray">NFL</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="mlb" class="open-sans weight-600 color-dark-gray">MLB</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="nba" class="open-sans weight-600 color-dark-gray">NBA</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="nhl" class="open-sans weight-600 color-dark-gray">NHL</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fbs" class="open-sans weight-600 color-dark-gray">FBS</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="ncaam" class="open-sans weight-600 color-dark-gray">NCAAM</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            My Ekko Sports
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <a ui-sref="field()" class="open-sans weight-600 color-dark-gray">Field</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fieldNews" class="open-sans weight-600 color-dark-gray">News</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fieldRivals" class="open-sans weight-600 color-dark-gray">Rivals</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fieldUpsets" class="open-sans weight-600 color-dark-gray">
+                                        Upsets
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fieldGames" class="open-sans weight-600 color-dark-gray">
+                                        Games
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a ui-sref="fieldPicks" class="open-sans weight-600 color-dark-gray">
+                                        Picks
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="open-sans weight-600 color-dark-gray" href="#">
+                                        Fantasy
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<style>
+    .panel {
+        border: none;
+    }
+    .panel-heading {
+        border-radius: 0;
+    }
+     .panel-group .panel {
+         border-radius: 0;
+     }
+    .panel-default>.panel-heading {
+        background-color: #2c2f36;
+    }
+</style>
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $.slidebars({
+                scrollLock: true
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
+
